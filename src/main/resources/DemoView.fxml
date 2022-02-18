@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="window_demo" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jim.sprjfx.controller.DemoController">
+   <children>
+      <!-- 要发送的信息 -->
+      <TextField fx:id="TextField_SendData" layoutX="35.0" layoutY="52.0" onAction="#onEnter_send_data" onMouseClicked="#onMouseClicked_sendWebsocketMessage" prefHeight="32.0" prefWidth="515.0" promptText="WebSocket Send Message" />
+      <!-- websocket提交按钮 -->
+      <Button fx:id="button_submit" layoutX="425.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_submit" onMouseMoved="#onMouseMoved_button_submit" prefHeight="32.0" prefWidth="128.0" style="-fx-background-color: #33CCFF;" text="确      定" textFill="WHITE" />
+      <Pane layoutX="20.0" layoutY="126.0" prefHeight="109.0" prefWidth="235.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10;">
+         <children>
+            <Circle fx:id="circle" fill="DODGERBLUE" layoutX="30.0" layoutY="49.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+         </children></Pane>
+      <Pane layoutX="20.0" layoutY="418.0" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+         <children>
+            <Button fx:id="button_newnumber" layoutX="78.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_button_newnumber" onMouseMoved="#onMouseMoved_button_newnumber" style="-fx-background-color: #FFFFFF;" text="添加用户" textFill="GREY" />
+            <Button fx:id="button_logout" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_layout" onMouseMoved="#onMouseMoved_button_logout" style="-fx-background-color: #ffffff;" text="退出登录" textFill="GREY" />
+         </children>
+      </Pane>
+      <Button fx:id="button_socket" layoutX="467.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_socket" onMouseMoved="#onMouseMoved_button_socket" style="-fx-background-color: #e2e2e2;" text="打开 Socket" />
+      <Button fx:id="button_web" layoutX="389.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_web" style="-fx-background-color: #e2e2e2;" text="打开 Web" />
+
+      <TextField fx:id="textField_JsonAddress" layoutX="35.0" layoutY="267.0" onAction="#onAction_JsonAddress" onMouseClicked="#onMouseClicked_JsonAddress" prefHeight="32.0" prefWidth="515.0" promptText="Json Address" />
+      <Button fx:id="button_submit_jsonAddress" layoutX="425.0" layoutY="357.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_button_submit_jsonAddress" onMouseMoved="#onMouseMoved_button_submit_jsonAddress" prefHeight="32.0" prefWidth="128.0" style="-fx-background-color: #33CCFF;" text="确      定" textFill="WHITE" />
+
+      <Label fx:id="label_nums" layoutX="36.0" layoutY="90.0" prefHeight="15.0" prefWidth="334.0" style="-fx-background-color: #FFFFFF;" textFill="#15c930" />
+      <Label layoutX="23.0" layoutY="26.0" text="WebSocket Data">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="235.0" text="JSON Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_address_update_success" layoutX="36.0" layoutY="306.0" prefHeight="15.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;" textFill="#15c930" />
+      <Label fx:id="label_address_update_fail" layoutX="35.0" layoutY="324.0" prefHeight="15.0" prefWidth="500.0" textFill="#b2b2b2" />
+      <Label layoutX="36.0" layoutY="339.0" prefHeight="15.0" prefWidth="500.0" textFill="#15c930" />
+
+      <!-- Lines -->
+      <Line endX="306.0" layoutX="240.0" layoutY="35.0" startX="-100.0" stroke="#868686" strokeWidth="0.3" />
+      <Line endX="330.0" layoutX="218.0" layoutY="245.0" startX="-94.0" stroke="#868686" strokeWidth="0.3" />
+      <Line endX="420.0" layoutX="135.0" layoutY="407.0" startX="-100.0" stroke="#868686" strokeWidth="0.3" />
+      <Label fx:id="label_WebSocketType" layoutX="36.0" layoutY="108.0" prefHeight="15.0" prefWidth="334.0" style="-fx-background-color: #FFFFFF;" textFill="#ffa54d" />
+      <Button fx:id="button_startRedis" layoutX="35.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_startRedis" onMouseMoved="#onMouseMoved_startRedis" style="-fx-background-color: #ABDC65;" text="Start Redis" textFill="WHITE" />
+      <Label fx:id="label_Redis" layoutX="119.0" layoutY="386.0" prefHeight="15.0" prefWidth="292.0" textFill="#909090" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="button_startSocket" layoutX="119.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_startSocket" onMouseMoved="#onMouseMoved_startSocket" style="-fx-background-color: #ABDC65;" text="Start Socket" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="219.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_turnOff" text="turnOfff" />
+      <Button layoutX="192.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#onMouseClicked_test" text="test" />
+   </children>
+</AnchorPane>
